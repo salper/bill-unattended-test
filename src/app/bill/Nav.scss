@@ -10,7 +10,6 @@
 
   ul {
     display: flex;
-    height: $touch-height;
     margin: 0;
     list-style-type: none;
     padding: 0;
@@ -21,7 +20,8 @@
 
     li {
       display: inline-block;
-      flex: 1;
+      height: $touch-height;
+      flex: 1 1 auto;
       line-height: $touch-height;
       text-align: center;
       cursor: pointer;
