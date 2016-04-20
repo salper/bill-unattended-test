@@ -1,0 +1,81 @@
+@import 'variables.scss';
+
+.bill {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    max-width: 800px;
+
+    .header {
+      display: flex;
+      height: $touch-height;
+      flex: 0 0 auto;
+      padding: 0 $gutter;
+      background-color: $secondary-color;
+
+      .label {
+        flex: 1 1 0;
+        line-height: $touch-height;
+
+        &.long {
+          flex: 2 1 0;
+        }
+
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+
+    .body {
+      flex: 1 1 auto;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+
+      > div {
+        display: flex;
+        height: $touch-height;
+
+        &:nth-child(odd) {
+          background-color: lighten($secondary-color, 20);
+        }
+
+        > div {
+          flex: 1 1 0;
+          display: inline-block;
+          padding: 0 $gutter;
+          line-height: $touch-height;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          &.long {
+            flex: 2 1 0;
+          }
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    .footer {
+      height: $touch-height;
+      flex: 0 0 auto;
+      background-color: $secondary-color;
+      padding: 0 $gutter;
+      text-align: right;
+      line-height: $touch-height;
+    }
+  }
+}

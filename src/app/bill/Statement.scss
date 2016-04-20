@@ -1,0 +1,38 @@
+@import 'variables.scss';
+
+.bill .statement {
+  .content {
+    display: flex;
+    flex: 1 1 auto;
+
+    .header {
+      height: auto;
+      flex-direction: column;
+      background-color: lighten($secondary-color, 20);
+      padding: 0;
+
+      .label {
+        display: block;
+        background-color: $secondary-color;
+        padding: 0 $gutter;
+
+        &:last-child {
+          text-align: left;
+          border: solid 0 darken($secondary-color, 5);
+          border-bottom-width: 1px;
+        }
+      }
+    }
+
+    .body > div {
+      padding: 0 $gutter;
+      line-height: $touch-height;
+      text-align: right;
+
+      &:last-child {
+        border: solid 0 lighten($secondary-color, 20);
+        border-width: 0 0 1px 0;
+      }
+    }
+  }
+}

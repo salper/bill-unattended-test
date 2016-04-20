@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+html, body, #main {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+
+  @media (min-width: 600px) and (min-resolution: 192dpi) {
+    font-size: $font-size-retina;
+  }
+}
+
+a {
+  color: $accent-color;
+}
