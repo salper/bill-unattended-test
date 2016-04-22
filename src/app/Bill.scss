@@ -17,19 +17,21 @@
     main {
       display: flex;
       flex-direction: column;
-      // flex: 1 1 0;
       position: absolute;
       top: 0;
       bottom: 0;
       width: 100%;
       max-width: 800px;
+      overflow: hidden;
 
       .header {
+        z-index: 1;
         display: flex;
         height: $touch-height;
         flex: 0 0 auto;
         padding: 0 $gutter;
         background-color: $secondary-color;
+        box-shadow: 0 1px 1em $primary-color;
 
         .label {
           flex: 1 1 0;
@@ -79,9 +81,11 @@
       }
 
       .footer {
+        z-index: 1;
         height: $touch-height;
         flex: 0 0 auto;
         background-color: $secondary-color;
+        box-shadow: 0 1px 1em $primary-color;
         padding: 0 $gutter;
         text-align: right;
         line-height: $touch-height;

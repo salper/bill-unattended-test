@@ -1,7 +1,9 @@
 @import 'variables';
 
 .bill nav {
+  z-index: 2;
   background-color: $primary-color;
+  box-shadow: 1px 1px 1em $primary-color;
 
   @media (min-width: 600px) {
     flex: 1 1 0;

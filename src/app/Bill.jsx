@@ -37,15 +37,17 @@ export const createObservables = () => {
 export const Bill = ({children, loaded, location: {pathname}}) => (
   <div className="bill">
     <Nav />
-    <ReactCSSTransitionGroup
-      component="div"
-      className="animated-container"
-      transitionName="fade"
-      transitionEnterTimeout={500}
-      transitionLeaveTimeout={0}
-    >
-      {loaded ? React.cloneElement(children, {key: pathname}) : null}
-    </ReactCSSTransitionGroup>
+    {loaded ? (
+      <ReactCSSTransitionGroup
+        component="div"
+        className="animated-container"
+        transitionName="slide"
+        transitionEnterTimeout={500}
+        transitionLeaveTimeout={500}
+      >
+        {React.cloneElement(children, {key: pathname})}
+      </ReactCSSTransitionGroup>
+    ) : null}
   </div>
 );
 
