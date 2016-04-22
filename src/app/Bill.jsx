@@ -1,3 +1,4 @@
+import '../animations.scss';
 import './Bill.scss';
 import {Observable} from 'rxjs/Observable';
 import {pluck} from 'rxjs/operator/pluck';
@@ -10,6 +11,7 @@ import provide from '../utils/component/provide';
 import connect from '../utils/component/connect';
 import compose from 'recompose/compose';
 import Nav from './bill/Nav';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export const createObservables = () => {
   const fetch = () =>
@@ -32,16 +34,25 @@ export const createObservables = () => {
   return {loaded$, bill$};
 };
 
-export const Bill = ({children, loaded}) => (
+export const Bill = ({children, loaded, location: {pathname}}) => (
   <div className="bill">
     <Nav />
-    {loaded ? children : null}
+    <ReactCSSTransitionGroup
+      component="div"
+      className="animated-container"
+      transitionName="fade"
+      transitionEnterTimeout={500}
+      transitionLeaveTimeout={0}
+    >
+      {loaded ? React.cloneElement(children, {key: pathname}) : null}
+    </ReactCSSTransitionGroup>
   </div>
 );
 
 Bill.propTypes = {
   children: PropTypes.element.isRequired,
-  loaded: PropTypes.bool
+  loaded: PropTypes.bool,
+  location: PropTypes.object.isRequired
 };
 
 export default compose(
