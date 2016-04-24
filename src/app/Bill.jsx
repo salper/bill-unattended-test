@@ -42,6 +42,8 @@ export const Bill = ({children, loaded, location: {pathname}}) => (
         component="div"
         className="animated-container"
         transitionName="slide"
+        transitionAppear
+        transitionAppearTimeout={500}
         transitionEnterTimeout={500}
         transitionLeaveTimeout={500}
       >

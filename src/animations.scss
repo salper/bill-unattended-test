@@ -1,31 +1,24 @@
-.fade-enter {
+.slide-appear {
   opacity: 0.01;
 }
 
-.fade-enter.fade-enter-active {
+.slide-appear.slide-appear-active {
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
 
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
 .slide-enter {
+  z-index: 1;
   transform: translateY(-100%);
 }
 
 .slide-enter.slide-enter-active {
   transform: translateY(0);
-  transition: transform 500ms ease-in;
+  transition: transform 500ms ease-out;
 }
 
 .slide-leave {
+  z-index: 0;
   transform: translateY(0);
 }
 
