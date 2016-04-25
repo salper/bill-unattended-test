@@ -9,20 +9,28 @@
 
 .slide-enter {
   z-index: 1;
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
+
+  @media (min-width: 600px) {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 .slide-enter.slide-enter-active {
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
   transition: transform 500ms ease-out;
 }
 
 .slide-leave {
   z-index: 0;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 .slide-leave.slide-leave-active {
-  transform: translateY(100%);
+  transform: translate3d(0, 50%, 0);
   transition: transform 500ms ease-in;
+
+  @media (min-width: 600px) {
+    transform: translate3d(50%, 0, 0);
+  }
 }
