@@ -11,8 +11,10 @@
 
   .animated-container {
     display: flex;
-    flex: 1;
     position: relative;
+    max-width: 800px;
+    overflow: hidden;
+    flex: 1;
 
     main {
       display: flex;
@@ -21,7 +23,6 @@
       top: 0;
       bottom: 0;
       width: 100%;
-      max-width: 800px;
       overflow: hidden;
       background-color: white;
 
